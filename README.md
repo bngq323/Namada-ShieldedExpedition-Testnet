@@ -103,7 +103,7 @@ curl -s $SNAPSHOT_URL | tar -xzv -C $BASE_DIR/$CHAIN_ID<br />
 
 #### Restart service
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-sudo systemctl restart namadad && sudo journalctl -u namada.service -fn 100 -o cat
+sudo systemctl restart namadad && sudo journalctl -u namadad -fn 100 -o cat
 </p>
 
 ## Useful scripts
