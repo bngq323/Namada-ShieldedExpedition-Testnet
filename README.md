@@ -9,7 +9,7 @@ export NAMADA_TAG="v0.32.1"<br />
 export TM_HASH=v0.1.4-abciplus<br />
 export CHAIN_ID="shielded-expedition.88f17d1d14"<br />
 export PUBLIC_IP="PUBLIC IP"<br />
-export VALIDATOR_ALIAS="MONIKER"<br />
+export VALIDATOR_ALIAS="YOUR MONIKER"<br />
 </p>
 
 ## Run node as service
