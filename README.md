@@ -109,7 +109,7 @@ sudo systemctl restart namadad && sudo journalctl -u namada.service -fn 100 -o c
 ## Useful scripts
 #### Voting script
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-wget https://www.somewhere.com/namada_voting.sh<br />
+wget https://raw.githubusercontent.com/bngq323/Namada-ShieldedExpedition-Testnet/main/namada_voting.sh<br />
 chmod +x namada_voting.sh<br />
 ./namada_voting.sh
 </p>
