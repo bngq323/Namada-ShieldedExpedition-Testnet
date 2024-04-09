@@ -97,8 +97,8 @@ rm -rf $BASE_DIR/$CHAIN_ID/cometbft/data $BASE_DIR/$CHAIN_ID/db $BASE_DIR/$CHAIN
 
 #### Download latest snapshot
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-wget -P $BASE_DIR/somewhere https://files.somewhere.com/namada-snapshot.tar.gz<br />
-tar -zcvf namada-snapshot.tar.gz<br />
+SNAPSHOT_URL="http://rpc.moonode-namada-se.online:50505/namada-testnet-snapshot.tar.gz"<br />
+curl -s $SNAPSHOT_URL | tar -xzv -C $BASE_DIR/$CHAIN_ID<br />
 </p>
 
 #### Restart service
