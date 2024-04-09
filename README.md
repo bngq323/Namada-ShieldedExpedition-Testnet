@@ -5,12 +5,11 @@
 export PATH=$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin<br />
 export PATH=/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:$HOME/go/bin<br />
 export BASE_DIR=$HOME/.local/share/namada<br />
-export NAMADA_TAG="Namada Release Tag"<br />
+export NAMADA_TAG="v0.32.1"<br />
 export TM_HASH=v0.1.4-abciplus<br />
-export CHAIN_ID="public-testnet-15.0dacadb8d663"<br />
+export CHAIN_ID="shielded-expedition.88f17d1d14"<br />
 export PUBLIC_IP="PUBLIC IP"<br />
-export IP_PORT="PUBLIC IP:26656"<br />
-export VALIDATOR_ALIAS="VALIDATOR MONIKER"<br />
+export VALIDATOR_ALIAS="MONIKER_NAME"<br />
 </p>
 
 ## Run node as service
@@ -18,16 +17,16 @@ export VALIDATOR_ALIAS="VALIDATOR MONIKER"<br />
 sudo vi /etc/systemd/system/namadad.service
 <p style="background:black;color:white;padding:10px;border-radius:6px">
 [Unit]<br />
-Description=namada<br />
+Description=namada service<br />
 After=network-online.target<br />
 
 [Service]<br />
-User=namadanet<br />
-WorkingDirectory=/home/namadanet/.local/share/namada<br />
+User=USER_NAME<br />
+WorkingDirectory=/home/USER_NAME/.local/share/namada<br />
 Environment="NAMADA_LOG=info"<br />
 Environment="CMT_LOG_LEVEL=p2p:none,pex:error"<br />
 Environment="NAMADA_CMT_STDOUT=true"<br />
-ExecStart=/usr/local/bin/namada --base-dir=/home/namadanet/.local/share/namada node ledger run<br />
+ExecStart=/usr/local/bin/namada --base-dir=/home/USER_NAME/.local/share/namada node ledger run<br />
 StandardOutput=syslog<br />
 StandardError=syslog<br />
 Restart=on-failure<br />
@@ -43,7 +42,7 @@ WantedBy=multi-user.target<br />
 sudo chmod 755 /etc/systemd/system/namadad.service<br />
 sudo systemctl daemon-reload<br />
 sudo systemctl enable namadad<br />
-sudo systemctl start namadad && sudo journalctl -u namadad -n 1000 -f<br />
+sudo systemctl start namadad && sudo journalctl -u namadad -f -o cat<br />
 </p>
 
 ### Service commands
@@ -58,12 +57,12 @@ sudo service namadad restart<br />
 
 #### Public RPC: 
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-https://namada-se.staking_power.com/
+https://rpc.moonode-namada-se.online
 </p>
 
 #### Indexer Service: 
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-https://indexer.staking_power.com/
+https://indexer.moonode-namada-se.online/block/last
 </p>
 
 #### Genesis:
