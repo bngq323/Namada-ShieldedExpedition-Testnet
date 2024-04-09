@@ -9,7 +9,7 @@ export NAMADA_TAG="v0.32.1"<br />
 export TM_HASH=v0.1.4-abciplus<br />
 export CHAIN_ID="shielded-expedition.88f17d1d14"<br />
 export PUBLIC_IP="PUBLIC IP"<br />
-export VALIDATOR_ALIAS="MONIKER_NAME"<br />
+export VALIDATOR_ALIAS="MONIKER"<br />
 </p>
 
 ## Run node as service
@@ -67,24 +67,24 @@ https://indexer.moonode-namada-se.online/block/last
 
 #### Genesis:
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-https://files.somewhere.com/genesis.json
+http://rpc.moonode-namada-se.online:50505/genesis.json
 </p>
 
 #### Add seed:
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-seeds="tcp://ip:port<br />
+seeds="tcp://ab163f98c7f39480f6e18ddc1d886041cc066615@144.76.65.89:26657<br />
 sed -i "s#^seeds *=.*#seeds = \"$seeds\"#;" $BASE_DIR/$CHAIN_ID/config.toml
 </p>
 
 #### Add peer:
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-peers="tcp://ip:port"<br />
+peers="tcp://ab163f98c7f39480f6e18ddc1d886041cc066615@144.76.65.89:26657"<br />
 sed -i "s#^persistent_peers *=.*#persistent_peers = \"$peers\"#;" $BASE_DIR/$CHAIN_ID/config.toml
 </p>
 
 #### Address book:
 <p style="background:black;color:white;padding:10px;border-radius:6px">
-wget -qO $BASE_DIR/$CHAIN_ID/cometbft/config/addrbook.json https://snapshots.theamsolutions.info/nam-addrbook.json
+wget -qO $BASE_DIR/$CHAIN_ID/cometbft/config/addrbook.json http://rpc.moonode-namada-se.online:50505/addrbook.json
 </p>
 
 ### Snapshot:
